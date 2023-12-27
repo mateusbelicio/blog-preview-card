@@ -41,6 +41,11 @@
     max-width: 100%;
   }
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   main {
     display: flex;
     align-items: center;
@@ -51,6 +56,18 @@
 }
 
 @layer utilities {
+  .sr-only {
+    border-width: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
   .text-xsmall {
     font-size: 0.75rem;
   }
@@ -89,14 +106,28 @@
 @layer components {
   .card {
     background-color: var(--clr-neutral-100);
-    padding: 1.5rem;
-    display: grid;
-    gap: 1.5rem;
     border-radius: 1.25rem;
     border: 1px solid var(--clr-neutral-900);
     max-width: 24rem;
     box-shadow: 0.5rem 0.5rem 0 0 var(--clr-neutral-900);
     margin-inline: auto;
+
+    transition: box-shadow 0.2s ease-out;
+  }
+
+  .card:hover,
+  .card:focus-within {
+    box-shadow: 1rem 1rem 0 0 var(--clr-neutral-900);
+  }
+
+  .card__link {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .card__link:focus-visible {
+    outline: transparent;
   }
 
   .card__image {
@@ -121,23 +152,16 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-  }
-
-  .card__title > a {
-    color: var(--clr-neutral-900);
-    text-decoration: none;
     transition: color 0.15s ease-out;
-    font: inherit;
   }
 
-  .card__title > a:hover {
+  .card__link:hover .card__title {
     color: var(--clr-primary);
   }
 
-  .card__title > a:focus-visible {
-    color: var(--clr-primary);
+  .card__link:focus-visible .card__title {
     text-decoration: underline;
-    outline: transparent;
+    color: var(--clr-primary);
   }
 
   .card__description {
@@ -153,11 +177,5 @@
   .card__author > img {
     height: 2rem;
     aspect-ratio: 1;
-  }
-
-  @media screen and (min-width: 30em) {
-    .card {
-      box-shadow: 1rem 1rem 0 0 var(--clr-neutral-900);
-    }
   }
 }

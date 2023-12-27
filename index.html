@@ -11,22 +11,29 @@
 </head>
 <body>
   <main>
+    <h1 class="sr-only">Blog preview card</h1>
     <article class="card">
-      <img class="card__image" src="./src/assets/images/illustration-article.svg" alt="Blog preview card thumbnail">
-      <div class="card__heading">
-        <span class="card__tag font-bold text-xsmall">Learning</span>
-        <p class="card__date text-xsmall">Published 21 Dec 2023</p>
-        <h2 class="card__title text-large font-bold">
-          <a href="#">HTML & CSS foundations</a >
-        </h2>
-        <p class="card__description text-body">
-          These languages are the backbone of every website, defining structure, content, and presentation.
-        </p>
-      </div>
-      <div class="card__author">
-        <img src="./src/assets/images/image-avatar.webp" alt="Greg Hooper">
-        <span class="font-bold text-small">Greg Hooper</span>
-      </div>
+      <a class="card__link" href="#">
+        <img 
+          class="card__image" 
+          src="./src/assets/images/illustration-article.svg" 
+          alt="Blog preview card thumbnail"
+        >
+        <div class="card__heading">
+          <span class="card__tag font-bold text-xsmall">Learning</span>
+          <p class="card__date text-xsmall">Published 21 Dec 2023</p>
+          <h2 class="card__title text-large font-bold">
+            HTML & CSS foundations
+          </h2>
+          <p class="card__description text-body">
+            These languages are the backbone of every website, defining structure, content, and presentation.
+          </p>
+        </div>
+        <div class="card__author">
+          <img src="./src/assets/images/image-avatar.webp" alt="Greg Hooper">
+          <span class="font-bold text-small">Greg Hooper</span>
+        </div>
+      </a>
     </article>
   </main>
 </body>
