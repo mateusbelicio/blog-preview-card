@@ -1,0 +1,162 @@
+@font-face {
+  font-family: 'Figtree';
+  src: url('/src/assets/fonts/Figtree-VariableFont_wght.ttf') format('truetype');
+  font-weight: 500 800;
+}
+
+@layer base {
+  :root {
+    --clr-primary: hsl(47, 88%, 63%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-400: hsl(0, 0%, 50%);
+    --clr-neutral-900: hsl(0, 0%, 7%);
+  }
+
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--clr-primary);
+    color: var(--clr-neutral-900);
+    font-family: 'Figtree', sans-serif;
+    font-weight: 500;
+    font-weight: 500;
+    line-height: 1.5;
+    min-height: 100vh;
+    min-width: 20rem;
+  }
+
+  img,
+  figure {
+    display: block;
+    max-width: 100%;
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding: 8rem 1.5rem;
+    margin-block: auto;
+  }
+}
+
+@layer utilities {
+  .text-xsmall {
+    font-size: 0.75rem;
+  }
+
+  .text-body {
+    font-size: 0.875rem;
+  }
+
+  .text-small {
+    font-size: 0.875rem;
+  }
+
+  .text-large {
+    font-size: 1.25rem;
+  }
+
+  .font-bold {
+    font-weight: 800;
+  }
+
+  @media screen and (min-width: 30em) {
+    .text-body {
+      font-size: 1rem;
+    }
+
+    .text-xsmall {
+      font-size: 0.875rem;
+    }
+
+    .text-large {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@layer components {
+  .card {
+    background-color: var(--clr-neutral-100);
+    padding: 1.5rem;
+    display: grid;
+    gap: 1.5rem;
+    border-radius: 1.25rem;
+    border: 1px solid var(--clr-neutral-900);
+    max-width: 24rem;
+    box-shadow: 0.5rem 0.5rem 0 0 var(--clr-neutral-900);
+    margin-inline: auto;
+  }
+
+  .card__image {
+    border-radius: 0.625rem;
+    height: 12.5rem;
+    object-fit: cover;
+  }
+
+  .card__tag {
+    padding: 0.25rem 0.75rem;
+    background-color: var(--clr-primary);
+    justify-self: start;
+    border-radius: 0.25rem;
+  }
+
+  .card__heading {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .card__title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .card__title > a {
+    color: var(--clr-neutral-900);
+    text-decoration: none;
+    transition: color 0.15s ease-out;
+  }
+
+  .card__title > a:hover {
+    color: var(--clr-primary);
+  }
+
+  .card__title > a:focus-visible {
+    color: var(--clr-primary);
+    text-decoration: underline;
+    outline: transparent;
+  }
+
+  .card__description {
+    color: var(--clr-neutral-400);
+  }
+
+  .card__author {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .card__author > img {
+    height: 2rem;
+    aspect-ratio: 1;
+  }
+
+  @media screen and (min-width: 30em) {
+    .card {
+      box-shadow: 1rem 1rem 0 0 var(--clr-neutral-900);
+    }
+  }
+}

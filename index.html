@@ -4,27 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon-32x32.png">
   <link rel="stylesheet" href="./src/styles/main.css">
-  <base href=".">
   
   <title>Frontend Mentor | Blog preview card</title>
 </head>
 <body>
   <main>
     <article class="card">
-      <img src="/src/assets/images/illustration-article.svg" alt="Blog preview card thumbnail">
-      <span class="card__tag">Learning</span>
-    
-      <p class="card__date">Published 21 Dec 2023</p>
-    
-      <h2 class="card__title">HTML & CSS foundations</h2>
-    
-      <p class="card__description">These languages are the backbone of every website, defining structure, content, and presentation.</p>
-    
+      <img class="card__image" src="./src/assets/images/illustration-article.svg" alt="Blog preview card thumbnail">
+      <div class="card__heading">
+        <span class="card__tag font-bold text-xsmall">Learning</span>
+        <p class="card__date text-xsmall">Published 21 Dec 2023</p>
+        <h2 class="card__title text-large font-bold">
+          <a href="#">HTML & CSS foundations</a >
+        </h2>
+        <p class="card__description text-body">
+          These languages are the backbone of every website, defining structure, content, and presentation.
+        </p>
+      </div>
       <div class="card__author">
-        <img src="/src/assets/images/image-avatar.webp" alt="Greg Hooper">
-        <span>Greg Hooper</span>
+        <img src="./src/assets/images/image-avatar.webp" alt="Greg Hooper">
+        <span class="font-bold text-small">Greg Hooper</span>
       </div>
     </article>
   </main>
